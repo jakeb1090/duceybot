@@ -13,7 +13,8 @@ auth.set_access_token(access_key, access_secret)
 api = tweepy.API(auth)
 
 def get_tweets():
-    geosearch = api.search(q="ducey -filter:retweets AND -filter:links",geocode="33.574450,-112.156970,150mi", tweet_mode="extended")
+    #geofilter = "geocode="33.574450,-112.156970,150mi","
+    geosearch = api.search(q="ducey -filter:retweets AND -filter:links",tweet_mode="extended")
     nearme = []
     for x in geosearch:
         # data = {
