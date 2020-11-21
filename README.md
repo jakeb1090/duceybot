@@ -1,6 +1,13 @@
 ## Twitter Sentiment Aggregator
 
-#### An automated, yet unbiasedly curated collection of thoughts about Arizona's governor. 
+### An automated, yet unbiasedly curated collection of thoughts about Arizona's governor. 
+
+### Criteria used to filter tweets within Tweepy API:
+<br>300mi radius set around Phoenix Geocode
+<br>Tweets contains links and images
+<br>Tweets containing a username == target
+
+<p>
 
 Note: bot does not stream tweets. 
 Aggregator is used in conjunction with the Invictify webapp to trigger webhooks and set intervals (4 hours). 
