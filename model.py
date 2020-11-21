@@ -3,11 +3,6 @@ from tweepy.streaming import StreamListener, Stream
 import tweepy
 import pandas as pd
 
-api_key = "6KhSV0cD8hVwsIgVvNkO3Ey4u"
-api_secret = "V6PoemcmnLh7KZlijAVqHvUkKZXPl9H1B6lpN1iibkQFoLvwiJ"
-access_key = "1328537149264728070-gHBH3jn6IL3fDQlgPwXFpD0IJsKAoY"
-access_secret = "QG9vVtw1kXmJAO8316wuyoURAD4RK8yjZovqRmkqbmI5g"
-
 auth = OAuthHandler(api_key, api_secret)
 auth.set_access_token(access_key, access_secret)
 api = tweepy.API(auth)
