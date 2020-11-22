@@ -2,6 +2,7 @@ from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener, Stream
 import tweepy
 import pandas as pd
+import config
 
 auth = OAuthHandler(api_key, api_secret)
 auth.set_access_token(access_key, access_secret)
@@ -23,7 +24,7 @@ def get_tweets():
         #     'created_at': x.created_at,
         #    }
         # nearme.append(data)
-        if len(x.full_text) > 120:
+        if len(x.full_text) > 100:
             pass
         else:
             try:
