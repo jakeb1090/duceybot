@@ -6,6 +6,7 @@
 <br>*300mi radius set around Phoenix Geocode
 <br>*Tweets contains links and images
 <br>*Tweets containing a username == target
+<br>*Api results returned as json and stored in SQL Database
 
 <p>
 
