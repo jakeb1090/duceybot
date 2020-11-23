@@ -1,8 +1,8 @@
+import tweepy
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener, Stream
-import tweepy
-import pandas as pd
-import config
+from config import api_key, api_secret, access_key, access_secret
+# import pandas as pd
 
 auth = OAuthHandler(api_key, api_secret)
 auth.set_access_token(access_key, access_secret)

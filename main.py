@@ -1,20 +1,31 @@
 from flask import Flask, request, render_template
-import model
+from flask import Flask
+import t_models
+from database import Base, session, engine
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+#create new tables
+Base.metadata.create_all(bind=engine)
+
+
 
 @app.route('/', methods=['GET', 'POST'])
 def bot():
     if request.method == 'GET':
-        model.get_tweets()
-        return {"status": "retweets okay"}
+        t_models.get_tweets()
+        return {
+            "status": "retweets okay",
+
+            }
     else:
         title = request.form['title']
         poster_url = m.build_imgurl(title)
         r = requests.get(poster_url)
         if r.status_code != 200:
             message = "No match"
-            return {"status: "no retweet"}
+            return {"status": "no retweets"}
         # return render_template("photo.html", image=poster_url)
 
         
