@@ -2,6 +2,7 @@ import tweepy
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener, Stream
 from config import api_key, api_secret, access_key, access_secret
+import time
 # import pandas as pd
 
 auth = OAuthHandler(api_key, api_secret)
@@ -31,3 +32,15 @@ def get_tweets():
                 api.retweet(x.id)
             except:
                 pass
+    print('doing manual check')        
+    print({'status': 'checking walmart'})
+    time.sleep(3)
+    print({'status': 'checking best buy'})
+    time.sleep(3)
+    print({'status': 'checking target'})
+    time.sleep(3)
+    print({'inventory status': 'sold out'})
+    time.sleep(1)
+    print({'message type': 'text'})
+    time.sleep(1)
+    print({'text mae': false})
