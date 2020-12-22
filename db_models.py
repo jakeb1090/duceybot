@@ -1,5 +1,5 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Numeric
-from SQLAlchemy.orm import relationship
+from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Numeric, DateTime
+from sqlalchemy.orm import relationship
 from database import Base, session, engine
 
 class User(Base):
@@ -31,3 +31,5 @@ class TwitterUser(Base):
     tweets = relationship('Tweets', backref='texts')
     def __repr__(self):
         return '<TwitterUser %r>' %self.screen_name
+
+    

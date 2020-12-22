@@ -1,33 +1,51 @@
 import tweepy
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener, Stream
-from config import api_key, api_secret, access_key, access_secret
+from config import az, fl
 # import pandas as pd
 
-auth = OAuthHandler(api_key, api_secret)
-auth.set_access_token(access_key, access_secret)
-api = tweepy.API(auth)
+class bot:
+    def __init__(self, state):
+        self.api_key = state['api_key']
+        self.api_secret = state['api_secret']
+        self.access_key = state['access_key']
+        self.access_secret = state['access_secret']
 
-def get_tweets():
-    #geofilter = "geocode="33.574450,-112.156970,150mi","
-    geosearch = api.search(q="ducey -filter:retweets AND -filter:links",tweet_mode="extended")
-    nearme = []
-    for x in geosearch:
-        # data = {
-        #     'author':  x.author.screen_name,
-        #     'followers': x.author.followers_count,
-        #     'text': x.full_text,
-        #     'favorited': x.favorited,
-        #     'fav_count' : x.favorite_count,
-        #     'retweet_count': x.retweet_count,
-        #     'retweeted': x.retweeted,
-        #     'created_at': x.created_at,
-        #    }
-        # nearme.append(data)
-        if len(x.full_text) > 100:
-            pass
-        else:
-            try:
-                api.retweet(x.id)
-            except:
-                pass
+    def get_params(self):
+        return self.gov
+
+    def authenticate(self):
+        auth = OAuthHandler(self.api_key, self.api_secret)
+        auth.set_access_token(self.access_key, self.access_secret)
+        api = tweepy.API(auth)
+        return api
+
+    def run_botaz(self):
+        api = self.authenticate()
+        geosearch = api.search(q="ducey -filter:retweets AND -filter:links",tweet_mode="extended")
+        for x in geosearch:
+            if len(x.full_text) < 100:
+                print(x.full_text, "\n")
+                try:
+                    api.retweet(x.id)
+                except:
+                    pass
+                
+    def run_botfl(self):
+        api = self.authenticate()
+        geosearch = api.search(q="desantis -filter:retweets AND -filter:links",tweet_mode="extended")
+        for x in geosearch:
+            if len(x.full_text) < 100:
+                print(x.full_text, "\n")
+                try:
+                    api.retweet(x.id)
+                except:
+                    pass
+                
+    def run_aztest(self):
+        api = self.authenticate()
+        geosearch = api.search(q="ducey -filter:retweets AND -filter:links",tweet_mode="extended")
+        results = []
+        for x in geosearch:
+            results.append(x)
+        return results
