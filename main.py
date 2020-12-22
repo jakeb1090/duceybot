@@ -4,7 +4,7 @@ import t_models
 from database import Base, session, engine
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 #create new tables
 Base.metadata.create_all(bind=engine)
