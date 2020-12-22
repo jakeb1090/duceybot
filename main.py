@@ -14,7 +14,7 @@ Base.metadata.create_all(bind=engine)
 @app.route('/', methods=['GET', 'POST'])
 def bot():
     if request.method == 'GET':
-        t_models.get_tweets()
+#         t_models.get_tweets()
 #         return {
 #             "status": "retweets okay",
 
