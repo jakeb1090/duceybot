@@ -1,7 +1,7 @@
 import tweepy
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener, Stream
-from config import api_key, api_secret, access_key, access_secret
+# from config import api_key, api_secret, access_key, access_secret
 import time
 # import pandas as pd
 
