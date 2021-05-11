@@ -1,6 +1,6 @@
 ## Twitter Sentiment Aggregator
 
-### An automated, yet unbiasedly curated collection of thoughts about Arizona's governor. 
+### Using Tweepy collect unbiased tweets about Arizona's governor. 
 
 ### Criteria used to filter tweets within Tweepy API:
 <br>*300mi radius set around Phoenix Geocode
