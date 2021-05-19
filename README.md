@@ -1,6 +1,6 @@
 ## Twitter Sentiment Aggregator
 
-### Using Tweepy collect unbiased tweets about Arizona's governor. 
+### Using Tweepy collect unbiased tweets about a certain topic of interest. 
 
 ### Criteria used to filter tweets within Tweepy API:
 <br>*300mi radius set around Phoenix Geocode
