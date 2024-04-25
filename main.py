@@ -1,7 +1,8 @@
 from flask import Flask, request, render_template
 from flask import Flask
-import t_models
+from t_models import bot
 from database import Base, session, engine
+
 
 app = Flask(__name__)
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -10,15 +11,10 @@ app = Flask(__name__)
 Base.metadata.create_all(bind=engine)
 
 
-
 @app.route('/', methods=['GET', 'POST'])
 def bot():
     if request.method == 'GET':
-#         t_models.get_tweets()
-#         return {
-#             "status": "retweets okay",
 
-#             }
         print('doing manual check')        
         print({'status': 'checking walmart'})
         time.sleep(3)
@@ -42,10 +38,3 @@ def bot():
             return {"status": "no retweets"}
 
         # return render_template("photo.html", image=poster_url)
-
-        
-        
-                
-        
-if __name__ == "__main__":
-    app.run()
