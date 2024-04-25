@@ -1,51 +1,31 @@
-import tweepy
-from tweepy import OAuthHandler
-from tweepy.streaming import StreamListener, Stream
-from config import az, fl
-# import pandas as pd
+# =======
+# #         t_models.get_tweets()
+# #         return {
+# #             "status": "retweets okay",
 
-class bot:
-    def __init__(self, state):
-        self.api_key = state['api_key']
-        self.api_secret = state['api_secret']
-        self.access_key = state['access_key']
-        self.access_secret = state['access_secret']
+# #             }
+#         print('doing manual check')        
+#         print({'status': 'checking walmart'})
+#         time.sleep(3)
+#         print({'status': 'checking best buy'})
+#         time.sleep(3)
+#         print({'status': 'checking target'})
+#         time.sleep(3)
+#         print({'inventory status': 'sold out'})
+#         time.sleep(1)
+#         print({'message type': 'text'})
+#         time.sleep(1)
+#         print({'text mae': false})
+    
+    
+#     else:
+#         title = request.form['title']
+#         poster_url = m.build_imgurl(title)
+#         r = requests.get(poster_url)
+#         if r.status_code != 200:
+#             message = "No match"
+#             return {"status": "no retweets"}
 
-    def get_params(self):
-        return self.gov
-
-    def authenticate(self):
-        auth = OAuthHandler(self.api_key, self.api_secret)
-        auth.set_access_token(self.access_key, self.access_secret)
-        api = tweepy.API(auth)
-        return api
-
-    def run_botaz(self):
-        api = self.authenticate()
-        geosearch = api.search(q="ducey -filter:retweets AND -filter:links",tweet_mode="extended")
-        for x in geosearch:
-            if len(x.full_text) < 100:
-                print(x.full_text, "\n")
-                try:
-                    api.retweet(x.id)
-                except:
-                    pass
-                
-    def run_botfl(self):
-        api = self.authenticate()
-        geosearch = api.search(q="desantis -filter:retweets AND -filter:links",tweet_mode="extended")
-        for x in geosearch:
-            if len(x.full_text) < 100:
-                print(x.full_text, "\n")
-                try:
-                    api.retweet(x.id)
-                except:
-                    pass
-                
-    def run_aztest(self):
-        api = self.authenticate()
-        geosearch = api.search(q="ducey -filter:retweets AND -filter:links",tweet_mode="extended")
-        results = []
-        for x in geosearch:
-            results.append(x)
-        return results
+#         # return render_template("photo.html", image=poster_url)
+# >>>>>>> main
+# <<<<<<< dualbot

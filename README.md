@@ -1,11 +1,12 @@
 ## Twitter Sentiment Aggregator
 
-### An automated, yet unbiasedly curated collection of thoughts about Arizona's governor. 
+### Using Tweepy collect unbiased tweets about a certain topic of interest. 
 
 ### Criteria used to filter tweets within Tweepy API:
 <br>*300mi radius set around Phoenix Geocode
 <br>*Tweets contains links and images
 <br>*Tweets containing a username == target
+<br>*Api results returned as json and stored in SQL Database
 
 <p>
 
